@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { @apply bg-paper text-ink font-sans antialiased; }
+:focus-visible { outline: 3px solid #9A3A22; outline-offset: 3px; border-radius: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+.btn { @apply inline-flex min-h-[48px] items-center justify-center px-6 text-sm font-semibold tracking-wide transition-colors; }
+.btn-primary { @apply bg-brick text-white hover:bg-brickdark; }
+.btn-ghost { @apply border border-ink text-ink hover:bg-ink hover:text-paper; }
+
+/* Subtle paper grain for the header plaque */
+.plaque-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .25 0 0 0 0 .15 0 0 0 .1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
