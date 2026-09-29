@@ -1,17 +1,22 @@
-# Pizzeria Imperia — portfolio rebuild
+# Pizzeria Imperia — concept redesign
 
-Next.js 14 (App Router) · TypeScript · Tailwind · Framer Motion. Fully static.
+A concept redesign of the Pizzeria Imperia website (Copenhagen), built as a portfolio project.
+Not affiliated with the restaurant. Menu data is taken from the official site.
 
+**Idea:** "Stop reading what's inside. See what you're ordering." — a visual menu where the food comes first.
+
+## Stack
+Next.js 14 (App Router) · TypeScript · Tailwind CSS · Framer Motion · fully static, Vercel-ready
+
+## Features
+- Visual pizza menu with search, dietary filters and category navigation
+- Accessible pizza modal (keyboard navigation, focus trap, Esc to close)
+- Draggable pizza scroll handle and staggered entrance animations
+- SEO: metadata, Open Graph, JSON-LD, sitemap, robots
+
+## Run locally
     npm install
-    npm run dev          # http://localhost:3000
-    npm run typecheck && npm run lint && npm run build
+    npm run dev
 
-## Photography (important)
-The official site has no per-pizza photos. Add your own/permitted shots:
-- Hero: `public/images/hero.jpg` (portrait ~1200×1500)
-- Pizzas: `public/images/pizzas/<slug>.jpg` (4:5, ≥1200px wide), then set `image: "/images/pizzas/<slug>.jpg"`
-  on the item in `src/data/menu.ts`. Until then a numbered "plate" placeholder is shown.
-
-## Data
-`src/data/menu.ts` mirrors https://www.pizzeria-imperia.dk/menus. No item 27 (published as "kommer snart").
-Lunch flag: nos. 1, 2, 3, 5, 6, 18 are on the lunch page; no. 14 is tagged lunch only on the main menu page — verify with the restaurant.
+## Photos
+Put photos in `public/images/pizzas/` named `<number>-<name>.jpg` (see `node scripts/wire-images.mjs --list`), then run `node scripts/wire-images.mjs`.
